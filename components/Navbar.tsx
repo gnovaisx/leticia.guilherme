@@ -2,6 +2,7 @@
 import lg from "@/public/lg.png";
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -16,29 +17,46 @@ export default function Navbar() {
         <div>
           <Image alt="Letícia e Guilherme" src={lg} />
         </div>
-        <div
-          className={`md:static absolute bg-white md:min-h-fit min-h-[20vh] left-0 md:w-auto w-full flex items-center px-5 ${!isClick ? "top-[100%]" : "top-[9%]"}`}
-        >
+        <div className="md:flex hidden">
           <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
             <li>
-              <a className="hover:text-green-900" href="">
+              <Link href="/cerimonia" className="hover:text-green-900">
                 Cerimônia
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="hover:text-green-900" href="">
+              <Link href="/mensagens" className="hover:text-green-900">
                 Mensagens
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="flex items-center gap-6">
-          <button className="bg-green-700 text-white px-5 py-2 rounded-full hover:bg-green-900">
+          <Link
+            href="/presentes"
+            className="bg-green-700 text-white px-5 py-2 rounded-full hover:bg-green-900"
+          >
             Presentes
-          </button>
+          </Link>
           <Menu className="cursor-pointer md:hidden" onClick={toggleNavbar} />
         </div>
       </nav>
+      {isClick && (
+        <div className="md:hidden">
+          <ul className="flex flex-col items-end mr-5 gap-3 pb-5">
+            <li>
+              <Link href="/cerimonia" className="hover:text-green-900">
+                Cerimônia
+              </Link>
+            </li>
+            <li>
+              <Link href="/mensagens" className="hover:text-green-900">
+                Mensagens
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
