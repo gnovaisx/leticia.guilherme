@@ -15,7 +15,9 @@ export default function Navbar() {
     <header className="bg-white">
       <nav className="flex justify-between items-center w-[92%] mx-auto">
         <div>
-          <Image alt="Letícia e Guilherme" src={lg} />
+          <Link href="/">
+            <Image alt="Letícia e Guilherme" src={lg} />
+          </Link>
         </div>
         <div className="md:flex hidden">
           <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
