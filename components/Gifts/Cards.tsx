@@ -24,8 +24,8 @@ export default function GiftCards({ id, title, price, image }: IGiftCards) {
           R${price}
         </CardDescription>
       </CardContent>
-      <CardFooter>
-        <Link href={`http://localhost:3000/presentes/${id}`}>
+      <CardFooter className="flex justify-center">
+        <Link href={`/presentes/${id}`}>
           <Button className="w-full">Presentear</Button>
         </Link>
       </CardFooter>
