@@ -8,9 +8,9 @@ import { useState } from "react";
 export default function Navbar() {
   const [isClick, setIsClick] = useState<boolean>(false);
   const toggleNavbar = () => {
-    console.log("cliquei");
     setIsClick(!isClick);
   };
+
   return (
     <header className="bg-white">
       <nav className="flex justify-between items-center w-[92%] mx-auto">
