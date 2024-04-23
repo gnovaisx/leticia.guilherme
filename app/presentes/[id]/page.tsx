@@ -30,7 +30,7 @@ export default function GiftDetails({ params }: IGiftDetails) {
 
   useEffect(() => {
     if (giftSelected) {
-      setPrice((giftSelected.price * quantity).toFixed(2));
+      setPrice(Number((giftSelected.price * quantity).toFixed(2)));
     }
   }, [giftSelected, quantity]);
 
