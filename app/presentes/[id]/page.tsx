@@ -1,4 +1,6 @@
 "use client";
+import { DrawerQrCode } from "@/components/Gifts/DrawerQrCode";
+import PriceButtons from "@/components/Gifts/PriceButtons";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,12 +9,9 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
-import { Slider } from "@/components/ui/slider";
 import giftCardsData from "@/lib/data";
 import pratos from "@/public/pratos.jpg";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 interface IGiftDetails {
   params: {
@@ -24,15 +23,6 @@ export default function GiftDetails({ params }: IGiftDetails) {
   const { id } = params;
 
   const giftSelected = giftCardsData.find((gift) => gift.id == id);
-
-  const [quantity, setQuantity] = useState<any>([1]);
-  const [price, setPrice] = useState(9.99);
-
-  useEffect(() => {
-    if (giftSelected) {
-      setPrice(Number((giftSelected.price * quantity).toFixed(2)));
-    }
-  }, [giftSelected, quantity]);
 
   return (
     <div className="w-[90%] m-auto p-8">
@@ -68,15 +58,9 @@ export default function GiftDetails({ params }: IGiftDetails) {
             </div>
 
             <div className="">
-              <p className="text-center">R$ {price}</p>
-              <Button className="w-full">Envie</Button>
-              <Slider
-                defaultValue={quantity}
-                min={1}
-                step={1}
-                onValueChange={setQuantity}
-                className="mt-4"
-              />
+              <p className="text-center mb-2">R$ {giftSelected?.price}/cota</p>
+              <PriceButtons params={{ price: giftSelected?.price ?? 9.99 }} />
+              <DrawerQrCode params={{ price: 1, name: "teste" }} />
             </div>
           </div>
         </div>
