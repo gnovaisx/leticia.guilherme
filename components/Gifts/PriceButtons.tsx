@@ -1,5 +1,6 @@
 import useGiftStore from "@/store/gift-state";
 import { Minus, Plus } from "lucide-react";
+import { useEffect } from "react";
 import { Button } from "../ui/button";
 
 interface IPriceButtons {
@@ -10,7 +11,12 @@ interface IPriceButtons {
 
 export default function PriceButtons({ params }: IPriceButtons) {
   const { price } = params;
-  const { priceChanged, handlePriceChanged } = useGiftStore();
+  const { priceChanged, resetPrice, addPriceByQuota, subPriceByQuota } =
+    useGiftStore();
+
+  useEffect(() => {
+    resetPrice(price);
+  }, [price]);
 
   return (
     <div className="flex items-center justify-center space-x-2 mb-2">
@@ -18,7 +24,7 @@ export default function PriceButtons({ params }: IPriceButtons) {
         variant="outline"
         size="icon"
         className="h-8 w-8 shrink-0 rounded-full"
-        onClick={() => handlePriceChanged(-19.99)}
+        onClick={() => subPriceByQuota(-price)}
         disabled={priceChanged <= price}
       >
         <Minus className="h-4 w-4" />
@@ -36,7 +42,7 @@ export default function PriceButtons({ params }: IPriceButtons) {
         variant="outline"
         size="icon"
         className="h-8 w-8 shrink-0 rounded-full"
-        onClick={() => handlePriceChanged(19.99)}
+        onClick={() => addPriceByQuota(price)}
       >
         <Plus className="h-4 w-4" />
         <span className="sr-only">Aumentar</span>

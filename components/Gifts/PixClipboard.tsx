@@ -5,22 +5,46 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useEffect, useState } from "react";
 
 export default function PixClipboard() {
+  const pixClipboard =
+    "00020126540014BR.GOV.BCB.PIX0132guilherme.novais.leite@gmail.com5204000053039865802BR5922Guilherme Leite Novais6009SAO PAULO62140510VRjlfi3wRL63045510";
+
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+
+  const copyPixCode = () => {
+    navigator.clipboard.writeText(pixClipboard);
+    setIsCopied(true);
+  };
+
+  useEffect(() => {
+    const runEffect = () => {
+      setIsCopied(false);
+    };
+
+    runEffect();
+    const interval = setInterval(runEffect, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button variant="outline">
-            Copiar
-            <ClipboardIcon className="ml-2 h-4 w-4" />
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>Clique para copiar a chave PIX</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <div onClick={copyPixCode}>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="outline">
+              {!isCopied ? "Copiar" : "Copiado!"}
+              <ClipboardIcon className="ml-2 h-4 w-4" />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Clique para copiar a chave PIX</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </div>
   );
 }
 

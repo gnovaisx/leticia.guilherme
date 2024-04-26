@@ -59,8 +59,8 @@ export default function GiftDetails({ params }: IGiftDetails) {
 
             <div className="">
               <p className="text-center mb-2">R$ {giftSelected?.price}/cota</p>
-              <PriceButtons params={{ price: giftSelected?.price ?? 9.99 }} />
-              <DrawerQrCode params={{ price: 1, name: "teste" }} />
+              <PriceButtons params={{ price: giftSelected?.price ?? 99.99 }} />
+              <DrawerQrCode name={giftSelected?.title ?? ""} />
             </div>
           </div>
         </div>

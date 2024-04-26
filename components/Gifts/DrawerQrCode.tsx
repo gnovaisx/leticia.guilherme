@@ -9,18 +9,18 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import QrCode from "@/public/qrcode.png";
+import useGiftStore from "@/store/gift-state";
+import Image from "next/image";
 import { Badge } from "../ui/badge";
 import PixClipboard from "./PixClipboard";
 
 interface IDrawerQrCode {
-  params: {
-    price: number;
-    name: string;
-  };
+  name: string;
 }
 
-export function DrawerQrCode({ params }: IDrawerQrCode) {
-  const { price, name } = params;
+export function DrawerQrCode({ name }: IDrawerQrCode) {
+  const { priceChanged } = useGiftStore();
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -29,14 +29,21 @@ export function DrawerQrCode({ params }: IDrawerQrCode) {
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader>
-            <DrawerTitle>{name}</DrawerTitle>
-            <DrawerDescription>
-              Efetua a compra de suas cotas via PIX
+            <DrawerTitle className="text-center text-3xl">{name}</DrawerTitle>
+            <DrawerDescription className="text-center">
+              Clique no ícone para copiar o código e enviar o valor desejado via
+              PIX!
             </DrawerDescription>
           </DrawerHeader>
           <div>
-            <p>{price}</p>
-            <div className="flex flex-wrap gap-2 justify-center items-center">
+            <p className="text-center text-4xl mb-2">R$ {priceChanged}</p>
+            <Image
+              src={QrCode}
+              alt="qr-code"
+              height="200"
+              className="mx-auto mb-3"
+            />
+            <div className="flex flex-wrap gap-2 judstify-center items-center">
               <Badge variant="secondary">
                 guilherme.novais.leite@gmail.com
               </Badge>
