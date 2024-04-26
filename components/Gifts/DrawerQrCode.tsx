@@ -12,7 +12,6 @@ import {
 import QrCode from "@/public/qrcode.png";
 import useGiftStore from "@/store/gift-state";
 import Image from "next/image";
-import { Badge } from "../ui/badge";
 import PixClipboard from "./PixClipboard";
 
 interface IDrawerQrCode {
@@ -30,34 +29,37 @@ export function DrawerQrCode({ name }: IDrawerQrCode) {
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader>
             <DrawerTitle className="text-center text-3xl">{name}</DrawerTitle>
-            <DrawerDescription className="text-center">
-              Clique no ícone para copiar o código e enviar o valor desejado via
-              PIX!
-            </DrawerDescription>
+            <p className="text-center text-2xl">R$ {priceChanged.toFixed(2)}</p>
           </DrawerHeader>
           <div>
-            <p className="text-center text-2xl mb-2">
-              R$ {priceChanged.toFixed(2)}
-            </p>
+            <DrawerDescription className="text-center mb-2">
+              Abra seu aplicativo do banco e leia o QR Code:
+            </DrawerDescription>
             <Image
               src={QrCode}
               alt="qr-code"
               height="200"
               className="mx-auto mb-3"
             />
-            <div className="flex flex-wrap gap-1 judstify-center items-center mx-auto">
-              <Badge variant="secondary">
+            <div className="px-4">
+              <DrawerDescription className="text-center mb-2">
+                Clique no botão a seguir para copiar o código PIX e colar na
+                área PIX do seu banco.
+              </DrawerDescription>
+              <p className="text-center font-bold bg-slate-200 rounded-md mb-2">
                 guilherme.novais.leite@gmail.com
-              </Badge>
+              </p>
               <PixClipboard />
             </div>
           </div>
           <DrawerFooter>
             <DrawerClose asChild>
-              <Button>Já enviei!</Button>
+              <Button className="w-full">Já enviei!</Button>
             </DrawerClose>
             <DrawerClose asChild>
-              <Button variant="outline">Quero alterar o valor</Button>
+              <Button variant="outline" className="w-full">
+                Quero alterar o valor
+              </Button>
             </DrawerClose>
           </DrawerFooter>
         </div>

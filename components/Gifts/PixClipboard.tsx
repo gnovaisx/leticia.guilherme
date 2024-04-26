@@ -30,12 +30,12 @@ export default function PixClipboard() {
   }, []);
 
   return (
-    <div onClick={copyPixCode}>
+    <div onClick={copyPixCode} className="w-full">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="outline">
-              {!isCopied ? "Copiar" : "Copiado!"}
+            <Button variant="outline" className="w-full">
+              {!isCopied ? "Copiar código do QR Code" : "Copiado!"}
               <ClipboardIcon className="ml-2 h-4 w-4" />
             </Button>
           </TooltipTrigger>

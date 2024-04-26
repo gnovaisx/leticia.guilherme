@@ -26,11 +26,6 @@ export default function Navbar() {
                 Cerimônia
               </Link>
             </li>
-            <li>
-              <Link href="/mensagens" className="hover:text-green-900">
-                Mensagens
-              </Link>
-            </li>
           </ul>
         </div>
         <div className="flex items-center gap-6">
