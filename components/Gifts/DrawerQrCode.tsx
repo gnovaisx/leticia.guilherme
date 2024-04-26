@@ -36,14 +36,16 @@ export function DrawerQrCode({ name }: IDrawerQrCode) {
             </DrawerDescription>
           </DrawerHeader>
           <div>
-            <p className="text-center text-4xl mb-2">R$ {priceChanged}</p>
+            <p className="text-center text-2xl mb-2">
+              R$ {priceChanged.toFixed(2)}
+            </p>
             <Image
               src={QrCode}
               alt="qr-code"
               height="200"
               className="mx-auto mb-3"
             />
-            <div className="flex flex-wrap gap-2 judstify-center items-center">
+            <div className="flex flex-wrap gap-2 judstify-center items-center mx-auto">
               <Badge variant="secondary">
                 guilherme.novais.leite@gmail.com
               </Badge>
