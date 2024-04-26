@@ -45,7 +45,7 @@ export function DrawerQrCode({ name }: IDrawerQrCode) {
               height="200"
               className="mx-auto mb-3"
             />
-            <div className="flex flex-wrap gap-2 judstify-center items-center mx-auto">
+            <div className="flex flex-wrap gap-1 judstify-center items-center mx-auto">
               <Badge variant="secondary">
                 guilherme.novais.leite@gmail.com
               </Badge>
