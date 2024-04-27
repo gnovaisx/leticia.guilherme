@@ -24,7 +24,7 @@ export default function PixClipboard() {
     };
 
     runEffect();
-    const interval = setInterval(runEffect, 2000);
+    const interval = setInterval(runEffect, 3000);
 
     return () => clearInterval(interval);
   }, []);
