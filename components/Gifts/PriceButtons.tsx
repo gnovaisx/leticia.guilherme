@@ -31,7 +31,7 @@ export default function PriceButtons({ params }: IPriceButtons) {
         <span className="sr-only">Diminuir</span>
       </Button>
       <div className="flex-1 text-center">
-        <div className="text-5xl font-bold tracking-tighter">
+        <div className="text-3xl lg:text-5xl font-bold tracking-tighter">
           R$ {priceChanged.toFixed(2)}
         </div>
         <div className="text-[0.70rem] uppercase text-muted-foreground">
