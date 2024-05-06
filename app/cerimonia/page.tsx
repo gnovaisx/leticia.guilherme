@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -26,7 +27,7 @@ export default function Cerimonia() {
         <div>
           <h1 className="text-lg font-bold">Nosso sonho</h1>
           <p className="text-slate-400 italic">
-            "O amor é a única coisa que cresce a medida que se reparte"
+            'O amor é a única coisa que cresce a medida que se reparte'
           </p>
           <span className="text-sm text-slate-600">
             (LIVRO: O Pequeno Príncipe)
