@@ -1,5 +1,5 @@
 "use client";
-import bg from "@/public/bg3.jpg";
+import bg from "@/public/bg4.jpg";
 import Image from "next/image";
 
 export default function Hero() {
