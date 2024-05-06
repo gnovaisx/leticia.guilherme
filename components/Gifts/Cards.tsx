@@ -1,4 +1,3 @@
-import pratos from "@/public/pratos.jpg";
 import { IGiftCards } from "@/types/IGiftCards";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,7 +18,13 @@ export default function GiftCards({ id, title, price, image }: IGiftCards) {
         <CardTitle>{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <Image src={pratos} alt="pratos" className="w-full" />
+        <Image
+          src="/gifts/mixer.jpeg"
+          alt="pratos"
+          width={100}
+          height={100}
+          className="w-full"
+        />
         <CardDescription className="text-center pt-4">
           R${price}
         </CardDescription>
