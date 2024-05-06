@@ -33,6 +33,7 @@ export default function Presentes() {
               title={gift.title}
               price={gift.price}
               image={gift.image}
+              isDisabled={gift.isDisabled}
             />
           );
         })}

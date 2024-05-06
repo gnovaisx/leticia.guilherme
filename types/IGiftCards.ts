@@ -3,5 +3,5 @@ export interface IGiftCards {
   title: string;
   price: number;
   image: string;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
