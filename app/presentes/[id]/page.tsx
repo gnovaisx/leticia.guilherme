@@ -47,21 +47,18 @@ export default function GiftDetails({ params }: IGiftDetails) {
         <div className="text-3xl font-bold tracking-tighter sm:text-4xl">
           {giftSelected?.title}
         </div>
-        <div className="flex items-center">
-          <div className="mt-10 lg:mt-6 lg:col-start-2 lg:row-start-2 lg:self-center flex flex-col lg:flex-row gap-4">
-            <div className="h-[350px] lg:h-[600px]">
-              <Image
-                src={pratos}
-                alt="pratos"
-                className="rounded-md object-cover h-full w-full"
-              />
-            </div>
-
-            <div className="">
-              <p className="text-center mb-2">R$ {giftSelected?.price}/cota</p>
-              <PriceButtons params={{ price: giftSelected?.price ?? 99.99 }} />
-              <DrawerQrCode name={giftSelected?.title ?? ""} />
-            </div>
+        <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+          <div className="h-[350px] lg:h-[600px]">
+            <Image
+              src={pratos}
+              alt="pratos"
+              className="rounded-md object-cover h-full w-full"
+            />
+          </div>
+          <div className="lg:flex lg:flex-col items-center justify-center">
+            <p className="text-center mb-2">R$ {giftSelected?.price}/cota</p>
+            <PriceButtons params={{ price: giftSelected?.price ?? 99.99 }} />
+            <DrawerQrCode name={giftSelected?.title ?? ""} />
           </div>
         </div>
       </div>
