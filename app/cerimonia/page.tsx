@@ -32,10 +32,13 @@ export default function Cerimonia() {
             (LIVRO: O Pequeno Príncipe)
           </span>
           <p className="mt-4">
-            A cerimônia e celebração irão ocorrer no dia 22 de junho de 2024 às
-            12:00 no Restaurante Nonno Vitório Trattoria.
+            A cerimônia e celebração do nosso sonho ocorrerá no dia 22 de junho
+            de 2024 às 12:00 no Restaurante Nonno Vitório Trattoria.
           </p>
-          <p>Aguardamos ansiosamente a presença de todos.</p>
+          <span className="text-slate-600">
+            Rua Doutor Campo Sales, 271, Centro - Cosmópolis, SP
+          </span>
+          <p className="mt-4">Aguardamos ansiosamente a presença de todos!</p>
         </div>
         <div className="flex self-center justify-center lg:justify-end">
           <iframe
