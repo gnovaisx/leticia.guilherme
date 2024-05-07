@@ -47,7 +47,7 @@ export default function GiftDetails({ params }: IGiftDetails) {
           {giftSelected?.title}
         </div>
         <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-          <div className="h-[350px] lg:h-[600px] w-auto flex justify-center items-center mx-auto">
+          <div className="h-[350px] lg:h-[600px] w-[450px] flex justify-center items-center mx-auto">
             <Image
               src={giftSelected ? giftSelected.image : "/gifts/presente.jpg"}
               alt="pratos"
