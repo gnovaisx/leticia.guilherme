@@ -51,7 +51,7 @@ export default function GiftDetails({ params }: IGiftDetails) {
             <Image
               src={giftSelected ? giftSelected.image : "/gifts/presente.jpg"}
               alt="pratos"
-              className="rounded-md object-cover h-full w-full"
+              className="rounded-md object-fill h-full w-full"
               width={100}
               height={100}
             />
