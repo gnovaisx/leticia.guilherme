@@ -5,7 +5,7 @@ const giftCardsData: IGiftCards[] = [
     id: 1,
     title: "Aspirador de pó vertical",
     price: 49.99,
-    image: "/gifts/aspirador-de-po-vertical.jpg",
+    image: "/gifts/aspirador-de-po-vertical-2.jpg",
     isDisabled: false,
   },
   {
