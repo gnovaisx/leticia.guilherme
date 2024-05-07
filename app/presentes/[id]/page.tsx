@@ -10,7 +10,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import giftCardsData from "@/lib/data";
-import pratos from "@/public/pratos.jpg";
 import Image from "next/image";
 
 interface IGiftDetails {
@@ -25,7 +24,7 @@ export default function GiftDetails({ params }: IGiftDetails) {
   const giftSelected = giftCardsData.find((gift) => gift.id == id);
 
   return (
-    <div className="w-[90%] m-auto p-8">
+    <div className="w-[90%] m-auto p-2">
       <div className="h-[40px]">
         <Breadcrumb>
           <BreadcrumbList>
@@ -50,9 +49,11 @@ export default function GiftDetails({ params }: IGiftDetails) {
         <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
           <div className="h-[350px] lg:h-[600px]">
             <Image
-              src={pratos}
+              src={giftSelected ? giftSelected.image : "/gifts/presente.jpg"}
               alt="pratos"
               className="rounded-md object-cover h-full w-full"
+              width={100}
+              height={100}
             />
           </div>
           <div className="lg:flex lg:flex-col items-center justify-center">

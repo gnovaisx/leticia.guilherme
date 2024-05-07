@@ -18,13 +18,15 @@ export default function GiftCards({ id, title, price, image }: IGiftCards) {
         <CardTitle>{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <Image
-          src="/gifts/mixer.jpeg"
-          alt="pratos"
-          width={100}
-          height={100}
-          className="w-full"
-        />
+        <div className="w-[300px] h-[300px]">
+          <Image
+            src={image}
+            alt="pratos"
+            width={100}
+            height={100}
+            className="w-full h-full object-fill"
+          />
+        </div>
         <CardDescription className="text-center pt-4">
           R${price}
         </CardDescription>

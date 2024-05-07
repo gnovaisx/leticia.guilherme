@@ -1,3 +1,4 @@
+"use client";
 import useGiftStore from "@/store/gift-state";
 import { Minus, Plus } from "lucide-react";
 import { useEffect } from "react";

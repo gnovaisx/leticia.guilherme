@@ -9,7 +9,7 @@ import {
 
 export default function Cerimonia() {
   return (
-    <div className="w-[90%] m-auto p-8">
+    <div className="w-[90%] m-auto p-2">
       <div className="h-[40px]">
         <Breadcrumb>
           <BreadcrumbList>
