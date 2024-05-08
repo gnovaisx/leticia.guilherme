@@ -33,7 +33,7 @@ const giftCardsData: IGiftCards[] = [
     id: 5,
     title: "Sanduicheira elétrica",
     price: 39.99,
-    image: "/gifts/sanduicheira-eletrica.jpg",
+    image: "/gifts/sanduicheira-eletrica.png",
     isDisabled: false,
   },
   {
