@@ -2,6 +2,13 @@ import { IGiftCards } from "@/types/IGiftCards";
 
 const giftCardsData: IGiftCards[] = [
   {
+    id: 0,
+    title: "Purificador de água",
+    price: 120.99,
+    image: "/gifts/purificador-agua.webp",
+    isDisabled: false,
+  },
+  {
     id: 1,
     title: "Aspirador de pó vertical",
     price: 150.99,
@@ -67,7 +74,7 @@ const giftCardsData: IGiftCards[] = [
   {
     id: 10,
     title: "Jogo de taças de vinho",
-    price: 100.50,
+    price: 100.5,
     image: "/gifts/jogo-de-tacas-de-vinho.webp",
     isDisabled: false,
   },
