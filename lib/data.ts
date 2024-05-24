@@ -64,13 +64,13 @@ const giftCardsData: IGiftCards[] = [
     image: "/gifts/faqueiro.webp",
     isDisabled: false,
   },
-  {
-    id: 9,
-    title: "Aparelho de Jantar",
-    price: 180.0,
-    image: "/gifts/aparelho-de-jantar.webp",
-    isDisabled: false,
-  },
+  // {
+  //   id: 9,
+  //   title: "Aparelho de Jantar",
+  //   price: 180.0,
+  //   image: "/gifts/aparelho-de-jantar.webp",
+  //   isDisabled: false,
+  // },
   {
     id: 10,
     title: "Jogo de taças de vinho",
@@ -120,13 +120,13 @@ const giftCardsData: IGiftCards[] = [
     image: "/gifts/jogo-de-copos.jpg",
     isDisabled: false,
   },
-  {
-    id: 17,
-    title: "Chaleira elétrica",
-    price: 99.0,
-    image: "/gifts/chaleira-eletrica.webp",
-    isDisabled: false,
-  },
+  // {
+  //   id: 17,
+  //   title: "Chaleira elétrica",
+  //   price: 99.0,
+  //   image: "/gifts/chaleira-eletrica.webp",
+  //   isDisabled: false,
+  // },
   {
     id: 18,
     title: "Chaleira ",
